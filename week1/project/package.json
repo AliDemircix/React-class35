@@ -1,0 +1,12 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "The first step to any project is to setup your development environment. Follow the steps:",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
