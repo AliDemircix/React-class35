@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Product from './Product';
 
 function Products({ selectedCategory }) {
-  const [isloading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
   const [products, setProducts] = useState([]);
 
   const apiUrl = selectedCategory
@@ -24,7 +24,7 @@ function Products({ selectedCategory }) {
     getProducts();
   }, [apiUrl]);
 
-  return isloading ? (
+  return isLoading ? (
     <div className="products-container">
       <h3>Loading...</h3>
     </div>
