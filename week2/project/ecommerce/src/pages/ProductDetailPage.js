@@ -2,13 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 
 function ProductDetailPage() {
-  const [isloading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
   const { id } = useParams();
-  const URL = `https://fakestoreapi.com/products/${id}`;
+  const apiUrl = `https://fakestoreapi.com/products/${id}`;
   const [product, setProduct] = useState({});
   const getDetails = async () => {
     try {
-      let response = await fetch(URL);
+      let response = await fetch(apiUrl);
       let data = await response.json();
       setProduct(data);
       setIsLoading(false);
@@ -19,7 +19,7 @@ function ProductDetailPage() {
   useEffect(() => {
     getDetails();
   });
-  return isloading ? (
+  return isLoading ? (
     <div className="product">
       <h3>Loading...</h3>
     </div>

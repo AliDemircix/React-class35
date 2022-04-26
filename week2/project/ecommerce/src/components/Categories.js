@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 
 function Categories({ setCategory }) {
-  const [isloading, setIsLoading] = useState(true);
-  const apiUrl = 'https://fakestoreapi.com/products/categories';
+  const [isLoading, setIsLoading] = useState(true);
   const [categories, setCategories] = useState([]);
+
+  const apiUrl = 'https://fakestoreapi.com/products/categories';
+
   const getCategories = async () => {
     try {
       let response = await fetch(apiUrl);
@@ -14,11 +16,12 @@ function Categories({ setCategory }) {
       console.log(err);
     }
   };
+
   useEffect(() => {
     getCategories();
   }, []);
 
-  return isloading ? (
+  return isLoading ? (
     <div className="category">
       <h3>Loading...</h3>
     </div>
