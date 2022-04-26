@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 function Product({ image, title, id }) {
   const navigate = useNavigate();
+
   return (
     <div
       className="product-item"

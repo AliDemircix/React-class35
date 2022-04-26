@@ -3,9 +3,11 @@ import { Link, useParams } from 'react-router-dom';
 
 function ProductDetailPage() {
   const [isLoading, setIsLoading] = useState(true);
+  const [product, setProduct] = useState({});
+
   const { id } = useParams();
   const apiUrl = `https://fakestoreapi.com/products/${id}`;
-  const [product, setProduct] = useState({});
+
   const getDetails = async () => {
     try {
       let response = await fetch(apiUrl);
@@ -16,9 +18,11 @@ function ProductDetailPage() {
       console.log(err);
     }
   };
+
   useEffect(() => {
     getDetails();
   });
+
   return isLoading ? (
     <div className="product">
       <h3>Loading...</h3>

@@ -5,6 +5,7 @@ import Products from '../components/Products';
 
 function MainPage() {
   const [selectedCategory, setSelectedCategory] = useState('');
+
   return (
     <div className="App">
       <Categories setCategory={setSelectedCategory} />
