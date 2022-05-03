@@ -1,0 +1,127 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+
+.App {
+  overflow: hidden;
+  text-align: center;
+}
+.category {
+  list-style: none;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+}
+.category::after {
+  content: '';
+  height: 2px;
+  width: 80%;
+  margin: 1rem 0.5rem;
+  background-color: rgb(18, 87, 98);
+}
+.category li {
+  padding: 0.5rem;
+  color: #0e0c0c;
+  background-color: #92f4ff;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.category li:hover {
+  background-color: #45bdcc;
+}
+.products-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.product-item {
+  width: 20%;
+  padding: 0.3rem;
+  cursor: pointer;
+}
+.product-item:hover {
+  transform: scale(0.99);
+  transition: all 0.3s;
+  border: solid 1px #45bdcc;
+}
+.product-item img {
+  object-fit: contain;
+  width: 100%;
+  height: 20rem;
+}
+.product-item p {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.product {
+  display: flex;
+  flex-direction: column;
+  margin: 2.5rem;
+  background-color: rgba(221, 221, 221, 0.21);
+  padding: 2rem;
+}
+.product-title {
+  color: #318590;
+}
+.product-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.3rem;
+}
+.product-description {
+  padding: 2rem;
+  line-height: 1.8;
+}
+.product-wrapper img {
+  width: 25%;
+}
+.title-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.title-container-title {
+  margin-right: auto;
+}
+.nav {
+  margin-left: 8px;
+}
+
+.nav-link {
+  margin: 0 4px;
+}
+.favorites-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.favorites-container img {
+  height: 25px;
+  width: 25px;
+  margin-right: 3px;
+}
+/* MOBILE*/
+@media (max-width: 767px) {
+  .product-item {
+    width: 100%;
+  }
+}
+/* IPAD*/
+@media (min-width: 768px) and (max-width: 1024px) {
+  .product-item {
+    width: 48%;
+  }
+}
