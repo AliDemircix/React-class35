@@ -32,7 +32,7 @@ const useFetch = (url, onReceived) => {
     }
   };
 
-  return [isLoading, error, performFetch];
+  return { isLoading, error, performFetch };
 };
 
 export default useFetch;

@@ -1,24 +1,24 @@
 import React, { useEffect, useState } from 'react';
+import useFetch from '../hooks/useFetch';
 
 function Categories({ setCategory }) {
-  const [isLoading, setIsLoading] = useState(true);
   const [categories, setCategories] = useState([]);
 
   const apiUrl = 'https://fakestoreapi.com/products/categories';
 
-  const getCategories = async () => {
-    try {
-      let response = await fetch(apiUrl);
-      let data = await response.json();
-      setCategories(data);
-      setIsLoading(false);
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
+  // const getCategories = async () => {
+  //   try {
+  //     let response = await fetch(apiUrl);
+  //     let data = await response.json();
+  //     setCategories(data);
+  //     setIsLoading(false);
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // };
+  const { isLoading, performFetch } = useFetch(apiUrl, setCategories);
   useEffect(() => {
-    getCategories();
+    performFetch();
   }, []);
 
   return isLoading ? (
