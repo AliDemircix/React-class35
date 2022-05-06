@@ -6,16 +6,6 @@ function Categories({ setCategory }) {
 
   const apiUrl = 'https://fakestoreapi.com/products/categories';
 
-  // const getCategories = async () => {
-  //   try {
-  //     let response = await fetch(apiUrl);
-  //     let data = await response.json();
-  //     setCategories(data);
-  //     setIsLoading(false);
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // };
   const { isLoading, performFetch } = useFetch(apiUrl, setCategories);
   useEffect(() => {
     performFetch();
