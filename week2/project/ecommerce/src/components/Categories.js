@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 function Categories({ setCategory }) {
   const [isLoading, setIsLoading] = useState(true);
-  const [categories, setCategories] = useState([]);
+  const [categories, setCategories] = useState();
 
   const apiUrl = 'https://fakestoreapi.com/products/categories';
 
@@ -27,18 +27,20 @@ function Categories({ setCategory }) {
     </div>
   ) : (
     <ul className="category">
-      {categories.map((category, index) => {
-        return (
-          <li
-            key={index}
-            onClick={(e) => {
-              setCategory(e.currentTarget.innerText);
-            }}
-          >
-            {category}
-          </li>
-        );
-      })}
+      {categories
+        ? categories.map((category, index) => {
+            return (
+              <li
+                key={index}
+                onClick={(e) => {
+                  setCategory(e.currentTarget.innerText);
+                }}
+              >
+                {category}
+              </li>
+            );
+          })
+        : null}
     </ul>
   );
 }

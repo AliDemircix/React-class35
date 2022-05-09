@@ -11,6 +11,7 @@ function Products({ selectedCategory }) {
 
   const getProducts = async () => {
     try {
+      setIsLoading(true);
       let response = await fetch(apiUrl);
       let data = await response.json();
       setProducts(data);
@@ -22,7 +23,7 @@ function Products({ selectedCategory }) {
 
   useEffect(() => {
     getProducts();
-  }, [apiUrl]);
+  }, [selectedCategory]);
 
   return isLoading ? (
     <div className="products-container">
