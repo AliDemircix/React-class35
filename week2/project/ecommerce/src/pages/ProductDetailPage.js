@@ -3,7 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 
 function ProductDetailPage() {
   const [isLoading, setIsLoading] = useState(true);
-  const [product, setProduct] = useState({});
+  const [product, setProduct] = useState();
 
   const { id } = useParams();
   const apiUrl = `https://fakestoreapi.com/products/${id}`;

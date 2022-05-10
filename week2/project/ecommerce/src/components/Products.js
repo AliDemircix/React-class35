@@ -3,7 +3,7 @@ import Product from './Product';
 
 function Products({ selectedCategory }) {
   const [isLoading, setIsLoading] = useState(true);
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState();
 
   const apiUrl = selectedCategory
     ? `https://fakestoreapi.com/products/category/${selectedCategory}`
